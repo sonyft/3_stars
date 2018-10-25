@@ -18,6 +18,9 @@ defmodule ThreestarsWeb.Router do
 
     resources "/users", UserController
     get "/", PageController, :index
+    resources "/currencies", CurrenciesController
+    resources "/rate", RateController
+
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,26 @@
+<h2>Listing Rate</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rate</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for rate <- @rate do %>
+    <tr>
+      <td><%= rate.rate %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: rate_path(@conn, :show, rate), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: rate_path(@conn, :edit, rate), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: rate_path(@conn, :delete, rate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Rate", to: rate_path(@conn, :new) %></span>

@@ -1,0 +1,13 @@
+<h2>Show Rate</h2>
+
+<ul>
+
+  <li>
+    <strong>Rate:</strong>
+    <%= @rate.rate %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: rate_path(@conn, :edit, @rate) %></span>
+<span><%= link "Back", to: rate_path(@conn, :index) %></span>
