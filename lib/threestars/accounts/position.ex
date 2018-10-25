@@ -2,9 +2,10 @@ defmodule Threestars.Accounts.Position do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "positions" do
-    field :name, :string
+    field(:name, :string)
+
+    has_many(:employees, Threestars.Accounts.Employees)
 
     timestamps()
   end

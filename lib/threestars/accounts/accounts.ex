@@ -102,102 +102,6 @@ defmodule Threestars.Accounts do
     Position.changeset(position, %{})
   end
 
-  alias Threestars.Accounts.Employee
-
-  @doc """
-  Returns the list of employees.
-
-  ## Examples
-
-      iex> list_employees()
-      [%Employee{}, ...]
-
-  """
-  def list_employees do
-    Repo.all(Employee)
-  end
-
-  @doc """
-  Gets a single employee.
-
-  Raises `Ecto.NoResultsError` if the Employee does not exist.
-
-  ## Examples
-
-      iex> get_employee!(123)
-      %Employee{}
-
-      iex> get_employee!(456)
-      ** (Ecto.NoResultsError)
-
-  """
-  def get_employee!(id), do: Repo.get!(Employee, id)
-
-  @doc """
-  Creates a employee.
-
-  ## Examples
-
-      iex> create_employee(%{field: value})
-      {:ok, %Employee{}}
-
-      iex> create_employee(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_employee(attrs \\ %{}) do
-    %Employee{}
-    |> Employee.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  @doc """
-  Updates a employee.
-
-  ## Examples
-
-      iex> update_employee(employee, %{field: new_value})
-      {:ok, %Employee{}}
-
-      iex> update_employee(employee, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_employee(%Employee{} = employee, attrs) do
-    employee
-    |> Employee.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
-  Deletes a Employee.
-
-  ## Examples
-
-      iex> delete_employee(employee)
-      {:ok, %Employee{}}
-
-      iex> delete_employee(employee)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_employee(%Employee{} = employee) do
-    Repo.delete(employee)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking employee changes.
-
-  ## Examples
-
-      iex> change_employee(employee)
-      %Ecto.Changeset{source: %Employee{}}
-
-  """
-  def change_employee(%Employee{} = employee) do
-    Employee.changeset(employee, %{})
-  end
-
   alias Threestars.Accounts.User
 
   @doc """
@@ -228,6 +132,10 @@ defmodule Threestars.Accounts do
 
   """
   def get_user!(id), do: Repo.get!(User, id)
+
+  def get_user_by_email!(email) do
+    Repo.get_by(User, email: email)
+  end
 
   @doc """
   Creates a user.
@@ -292,5 +200,101 @@ defmodule Threestars.Accounts do
   """
   def change_user(%User{} = user) do
     User.changeset(user, %{})
+  end
+
+  alias Threestars.Accounts.Employees
+
+  @doc """
+  Returns the list of employees.
+
+  ## Examples
+
+      iex> list_employees()
+      [%Employees{}, ...]
+
+  """
+  def list_employees do
+    Repo.all(Employees)
+  end
+
+  @doc """
+  Gets a single employees.
+
+  Raises `Ecto.NoResultsError` if the Employees does not exist.
+
+  ## Examples
+
+      iex> get_employees!(123)
+      %Employees{}
+
+      iex> get_employees!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_employees!(id), do: Repo.get!(Employees, id)
+
+  @doc """
+  Creates a employees.
+
+  ## Examples
+
+      iex> create_employees(%{field: value})
+      {:ok, %Employees{}}
+
+      iex> create_employees(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_employees(attrs \\ %{}) do
+    %Employees{}
+    |> Employees.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a employees.
+
+  ## Examples
+
+      iex> update_employees(employees, %{field: new_value})
+      {:ok, %Employees{}}
+
+      iex> update_employees(employees, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_employees(%Employees{} = employees, attrs) do
+    employees
+    |> Employees.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Employees.
+
+  ## Examples
+
+      iex> delete_employees(employees)
+      {:ok, %Employees{}}
+
+      iex> delete_employees(employees)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_employees(%Employees{} = employees) do
+    Repo.delete(employees)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking employees changes.
+
+  ## Examples
+
+      iex> change_employees(employees)
+      %Ecto.Changeset{source: %Employees{}}
+
+  """
+  def change_employees(%Employees{} = employees) do
+    Employees.changeset(employees, %{})
   end
 end

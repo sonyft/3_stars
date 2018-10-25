@@ -3,10 +3,9 @@ defmodule Threestars.Repo.Migrations.CreatePositions do
 
   def change do
     create table(:positions) do
-      add :name, :string
+      add(:name, :string)
 
       timestamps()
     end
-
   end
 end

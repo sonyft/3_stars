@@ -12,7 +12,7 @@
   <tbody>
 <%= for user <- @users do %>
     <tr>
-      <td><%= user.name %></td>
+      <td><%= user.user_name %></td>
       <td><%= user.password_hash %></td>
 
       <td class="text-right">

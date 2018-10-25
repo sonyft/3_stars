@@ -4,13 +4,13 @@ defmodule Threestars.Repo.Migrations.CreateEmployees do
   def change do
     create table(:employees) do
       add :name, :string
-      add :phone, :string
       add :email, :string
-      add :position_id, references(:positions, on_delete: :nothing)
+      add :phone, :string
+
+      add(:positions_id, references(:positions, on_delete: :nothing))
 
       timestamps()
     end
 
-    create index(:employees, [:position_id])
   end
 end

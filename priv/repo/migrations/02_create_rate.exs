@@ -3,11 +3,10 @@ defmodule Threestars.Repo.Migrations.CreateRate do
 
   def change do
     create table(:rate) do
-      add :rate, :float
-      add :currencies_id, references("currencies")
+      add(:rate, :float)
+      add(:currencies_id, references("currencies"))
 
       timestamps()
     end
-
   end
 end

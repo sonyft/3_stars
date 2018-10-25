@@ -188,4 +188,68 @@ defmodule Threestars.AccountsTest do
       assert %Ecto.Changeset{} = Accounts.change_user(user)
     end
   end
+
+  describe "employees" do
+    alias Threestars.Accounts.Employees
+
+    @valid_attrs %{email: "some email", name: "some name", phone: "some phone"}
+    @update_attrs %{email: "some updated email", name: "some updated name", phone: "some updated phone"}
+    @invalid_attrs %{email: nil, name: nil, phone: nil}
+
+    def employees_fixture(attrs \\ %{}) do
+      {:ok, employees} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Accounts.create_employees()
+
+      employees
+    end
+
+    test "list_employees/0 returns all employees" do
+      employees = employees_fixture()
+      assert Accounts.list_employees() == [employees]
+    end
+
+    test "get_employees!/1 returns the employees with given id" do
+      employees = employees_fixture()
+      assert Accounts.get_employees!(employees.id) == employees
+    end
+
+    test "create_employees/1 with valid data creates a employees" do
+      assert {:ok, %Employees{} = employees} = Accounts.create_employees(@valid_attrs)
+      assert employees.email == "some email"
+      assert employees.name == "some name"
+      assert employees.phone == "some phone"
+    end
+
+    test "create_employees/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_employees(@invalid_attrs)
+    end
+
+    test "update_employees/2 with valid data updates the employees" do
+      employees = employees_fixture()
+      assert {:ok, employees} = Accounts.update_employees(employees, @update_attrs)
+      assert %Employees{} = employees
+      assert employees.email == "some updated email"
+      assert employees.name == "some updated name"
+      assert employees.phone == "some updated phone"
+    end
+
+    test "update_employees/2 with invalid data returns error changeset" do
+      employees = employees_fixture()
+      assert {:error, %Ecto.Changeset{}} = Accounts.update_employees(employees, @invalid_attrs)
+      assert employees == Accounts.get_employees!(employees.id)
+    end
+
+    test "delete_employees/1 deletes the employees" do
+      employees = employees_fixture()
+      assert {:ok, %Employees{}} = Accounts.delete_employees(employees)
+      assert_raise Ecto.NoResultsError, fn -> Accounts.get_employees!(employees.id) end
+    end
+
+    test "change_employees/1 returns a employees changeset" do
+      employees = employees_fixture()
+      assert %Ecto.Changeset{} = Accounts.change_employees(employees)
+    end
+  end
 end
