@@ -1,0 +1,23 @@
+<h2>Show Currencies</h2>
+
+<ul>
+
+  <li>
+    <strong>Code digit:</strong>
+    <%= @currencies.code_digit %>
+  </li>
+
+  <li>
+    <strong>Code symb:</strong>
+    <%= @currencies.code_symb %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @currencies.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: currencies_path(@conn, :edit, @currencies) %></span>
+<span><%= link "Back", to: currencies_path(@conn, :index) %></span>
