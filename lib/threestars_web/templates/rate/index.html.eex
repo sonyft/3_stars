@@ -3,15 +3,22 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Character code</th>
+      <th>Digital code</th>
+      <th>Date</th>
       <th>Rate</th>
-
-      <th></th>
     </tr>
   </thead>
   <tbody>
-<%= for rate <- @rate do %>
+<%= for rate <- @rate, currency <- @currencies do %>
     <tr>
+      <td><%= currency.name %></td>
+      <td><%= currency.code_symb %></td>
+      <td><%= currency.code_digit %></td>
+      <td><%= rate.date %></td>
       <td><%= rate.rate %></td>
+
 
       <td class="text-right">
         <span><%= link "Show", to: rate_path(@conn, :show, rate), class: "btn btn-default btn-xs" %></span>

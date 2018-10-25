@@ -6,10 +6,24 @@
   <% end %>
 
   <div class="form-group">
+    <%= label f, :currency, class: "control-label" %>
+    <%= select f, :currencies_id, Enum.map(@currencies, fn(curr) -> {curr.code_symb, curr.id} end) %>
+    <%= error_tag f, :rate %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :date, class: "control-label" %>
+    <%= date_input f, :date, class: "form-control"  %>
+    <%= error_tag f, :rate %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :rate, class: "control-label" %>
     <%= number_input f, :rate, step: "any", class: "form-control" %>
     <%= error_tag f, :rate %>
   </div>
+
+  
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

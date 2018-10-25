@@ -6,6 +6,7 @@ defmodule Threestars.Currency.Rate do
   schema "rate" do
     belongs_to(:currencies, Threestars.Currency.Currencies)
     field :rate, :float
+    field :date, :date
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule Threestars.Currency.Rate do
   @doc false
   def changeset(rate, attrs) do
     rate
-    |> cast(attrs, [:rate, :currencies_id])
-    |> validate_required([:rate, :currencies_id])
+    |> cast(attrs, [:rate, :currencies_id, :date])
+    |> validate_required([:rate, :currencies_id, :date])
   end
 end
