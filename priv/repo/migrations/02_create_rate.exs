@@ -9,5 +9,7 @@ defmodule Threestars.Repo.Migrations.CreateRate do
 
       timestamps()
     end
+
+    create unique_index(:rate, [:currencies_id, :date], name: :unique_date)
   end
 end

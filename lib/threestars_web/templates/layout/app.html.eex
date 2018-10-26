@@ -9,27 +9,72 @@
 
     <title>Hello Threestars!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Three stars</h3>
+                </div>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Settings</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><%= link "Rates", to: rate_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link "Currencies", to: currencies_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link "Users", to: user_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link "Employees", to: employees_path(@conn, :index), class: "sidebar-link" %></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-link" href="#">About</a>
+                        <a class="sidebar-link" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-link" href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="sidebar-link" href="#">Contact</a>
+                    </li>
+                </ul>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+            </nav>
+            <nav class="navbar">
+                    <%# <div class="container-fluid"> %>
 
-    </div> <!-- /container -->
+                        <%# <div class="navbar-header"> %>
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                            </button>
+                        <%# </div> %>
+
+                    <%# </div> %>
+                </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                
+              <main role="main">
+                <%= render @view_module, @view_template, assigns %>
+              </main>
+            </div>
+            <%# <div id="container">
+              
+            </div> %>
+        </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

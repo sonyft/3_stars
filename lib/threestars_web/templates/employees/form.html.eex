@@ -12,6 +12,12 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :position, class: "control-label" %>
+    <%= select f, :positions_id, Enum.map(@positions, fn(pos) -> {pos.name, pos.id} end) %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :email, class: "control-label" %>
     <%= text_input f, :email, class: "form-control" %>
     <%= error_tag f, :email %>

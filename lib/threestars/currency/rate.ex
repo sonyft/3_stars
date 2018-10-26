@@ -16,5 +16,6 @@ defmodule Threestars.Currency.Rate do
     rate
     |> cast(attrs, [:rate, :currencies_id, :date])
     |> validate_required([:rate, :currencies_id, :date])
+    |> unique_constraint(:date_constraint, name: :unique_date)
   end
 end

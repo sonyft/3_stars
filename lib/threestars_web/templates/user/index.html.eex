@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Password hash</th>
 
       <th></th>
     </tr>
@@ -13,7 +12,6 @@
 <%= for user <- @users do %>
     <tr>
       <td><%= user.user_name %></td>
-      <td><%= user.password_hash %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
@@ -25,4 +23,4 @@
   </tbody>
 </table>
 
-<span><%= link "New User", to: user_path(@conn, :new) %></span>
+<span><%= link "New User", to: user_path(@conn, :new), class: "btn btn-primary" %></span>

@@ -9,6 +9,7 @@ defmodule Threestars.Accounts.Employees do
     field :phone, :string
 
     has_many(:user, Threestars.Accounts.User)
+    belongs_to(:positions, Threestars.Accounts.Position)
 
     timestamps()
   end
@@ -16,7 +17,7 @@ defmodule Threestars.Accounts.Employees do
   @doc false
   def changeset(employees, attrs) do
     employees
-    |> cast(attrs, [:name, :email, :phone])
-    |> validate_required([:name, :email, :phone])
+    |> cast(attrs, [:name, :email, :phone, :positions_id])
+    |> validate_required([:name, :email, :phone, :positions_id])
   end
 end

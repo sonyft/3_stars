@@ -214,7 +214,7 @@ defmodule Threestars.Accounts do
 
   """
   def list_employees do
-    Repo.all(Employees)
+    Repo.all(Employees) |> Repo.preload(:positions)
   end
 
   @doc """

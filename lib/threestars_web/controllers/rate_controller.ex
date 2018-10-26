@@ -6,8 +6,7 @@ defmodule ThreestarsWeb.RateController do
 
   def index(conn, _params) do
     rate = Currency.list_rate()
-    currencies = Enum.map(rate, fn(r) -> Currency.get_currencies!(r.currencies_id) end)
-    render(conn, "index.html", rate: rate, currencies: currencies)
+    render(conn, "index.html", rate: rate)
   end
 
   def new(conn, _params) do
@@ -19,10 +18,10 @@ defmodule ThreestarsWeb.RateController do
   def create(conn, %{"rate" => rate_params}) do
     currencies = Currency.list_currencies()
     case Currency.create_rate(rate_params) do
-      {:ok, rate} ->
+      {:ok, _} ->
         conn
         |> put_flash(:info, "Rate created successfully.")
-        |> redirect(to: rate_path(conn, :show, rate))
+        |> redirect(to: rate_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", currencies: currencies, changeset: changeset)
     end
@@ -35,8 +34,9 @@ defmodule ThreestarsWeb.RateController do
 
   def edit(conn, %{"id" => id}) do
     rate = Currency.get_rate!(id)
+    currencies = Currency.list_currencies()
     changeset = Currency.change_rate(rate)
-    render(conn, "edit.html", rate: rate, changeset: changeset)
+    render(conn, "edit.html", currencies: currencies, rate: rate, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "rate" => rate_params}) do

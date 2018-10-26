@@ -21,6 +21,10 @@ defmodule Threestars.Currency do
     Repo.all(Currencies)
   end
 
+  def list_currencies_rates do
+    Repo.all(Currencies) |> Repo.preload(:rate)
+  end
+
   @doc """
   Gets a single currencies.
 
@@ -114,7 +118,7 @@ defmodule Threestars.Currency do
 
   """
   def list_rate do
-    Repo.all(Rate)
+    Repo.all(Rate) |> Repo.preload(:currencies)
   end
 
   @doc """

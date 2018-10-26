@@ -27,4 +27,7 @@
   </tbody>
 </table>
 
-<span><%= link "New Currencies", to: currencies_path(@conn, :new) %></span>
+<span><%= link "New Currency", to: currencies_path(@conn, :new), class: "btn btn-primary"  %>
+</span>
+<span><%= link "Add rate", to: rate_path(@conn, :new), class: "btn btn-primary" %>
+</span>

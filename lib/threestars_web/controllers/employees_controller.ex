@@ -11,17 +11,19 @@ defmodule ThreestarsWeb.EmployeesController do
 
   def new(conn, _params) do
     changeset = Accounts.change_employees(%Employees{})
-    render(conn, "new.html", changeset: changeset)
+    positions = Accounts.list_positions
+    render(conn, "new.html", positions: positions, changeset: changeset)
   end
 
   def create(conn, %{"employees" => employees_params}) do
+    positions = Accounts.list_positions
     case Accounts.create_employees(employees_params) do
-      {:ok, employees} ->
+      {:ok, _} ->
         conn
         |> put_flash(:info, "Employees created successfully.")
-        |> redirect(to: employees_path(conn, :show, employees))
+        |> redirect(to: employees_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", positions: positions, changeset: changeset)
     end
   end
 
@@ -32,8 +34,9 @@ defmodule ThreestarsWeb.EmployeesController do
 
   def edit(conn, %{"id" => id}) do
     employees = Accounts.get_employees!(id)
+    positions = Accounts.list_positions
     changeset = Accounts.change_employees(employees)
-    render(conn, "edit.html", employees: employees, changeset: changeset)
+    render(conn, "edit.html", positions: positions, employees: employees, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "employees" => employees_params}) do

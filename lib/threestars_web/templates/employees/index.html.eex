@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Positions</th>
       <th>Email</th>
       <th>Phone</th>
 
@@ -14,6 +15,11 @@
 <%= for employees <- @employees do %>
     <tr>
       <td><%= employees.name %></td>
+      <%= if employees.positions != nil do %>
+        <td><%= employees.positions.name %></td>
+      <% else %>
+        <td>none</td>
+      <% end %>
       <td><%= employees.email %></td>
       <td><%= employees.phone %></td>
 
@@ -27,4 +33,4 @@
   </tbody>
 </table>
 
-<span><%= link "New Employees", to: employees_path(@conn, :new) %></span>
+<span><%= link "New Employees", to: employees_path(@conn, :new), class: "btn btn-primary" %></span>

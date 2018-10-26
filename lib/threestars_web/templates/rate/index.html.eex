@@ -11,11 +11,11 @@
     </tr>
   </thead>
   <tbody>
-<%= for rate <- @rate, currency <- @currencies do %>
+<%= for rate <- @rate do %>
     <tr>
-      <td><%= currency.name %></td>
-      <td><%= currency.code_symb %></td>
-      <td><%= currency.code_digit %></td>
+      <td><%= rate.currencies.name %></td>
+      <td><%= rate.currencies.code_symb %></td>
+      <td><%= rate.currencies.code_digit %></td>
       <td><%= rate.date %></td>
       <td><%= rate.rate %></td>
 
@@ -30,4 +30,4 @@
   </tbody>
 </table>
 
-<span><%= link "New Rate", to: rate_path(@conn, :new) %></span>
+<span><%= link "New Rate", to: rate_path(@conn, :new), class: "btn btn-primary" %></span>
