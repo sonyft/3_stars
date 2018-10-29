@@ -1,0 +1,15 @@
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/threestars_web/templates/user/edit.html.eex:1
+msgid "Edit User"
+msgstr "Редактиране на потребителя"
+
+#, elixir-format
+#: lib/threestars_web/templates/user/index.html.eex:25
+#: lib/threestars_web/templates/user/new.html.eex:1
+msgid "New User"
+msgstr "Нов потребител"

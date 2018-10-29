@@ -1,12 +1,12 @@
-<h2>Listing Employees</h2>
+<h2><%= dgettext("layout", "Employees") %> </h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Positions</th>
-      <th>Email</th>
-      <th>Phone</th>
+      <th><%= dgettext("layout", "Name") %></th>
+      <th><%= dgettext("employees", "Position") %></th>
+      <th><%= dgettext("employees", "Email") %></th>
+      <th><%= dgettext("employees", "Phone") %></th>
 
       <th></th>
     </tr>
@@ -24,13 +24,12 @@
       <td><%= employees.phone %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: employees_path(@conn, :show, employees), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: employees_path(@conn, :edit, employees), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: employees_path(@conn, :delete, employees), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link dgettext("layout", "Edit"), to: employees_path(@conn, :edit, employees), class: "btn btn-default btn-xs" %></span>
+        <span><%= link dgettext("layout", "Delete"), to: employees_path(@conn, :delete, employees), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Employees", to: employees_path(@conn, :new), class: "btn btn-primary" %></span>
+<span><%= link dgettext("employees", "New Employee"), to: employees_path(@conn, :new), class: "btn btn-primary" %></span>

@@ -1,0 +1,45 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/form.html.eex:15
+#: lib/threestars_web/templates/currencies/index.html.eex:7
+msgid "Character Code"
+msgstr ""
+
+#, elixir-format
+#: lib/threestars_web/templates/rate/index.html.eex:7
+msgid "Character code"
+msgstr ""
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/form.html.eex:9
+#: lib/threestars_web/templates/currencies/index.html.eex:6
+msgid "Digital Code"
+msgstr ""
+
+#, elixir-format
+#: lib/threestars_web/templates/rate/index.html.eex:8
+msgid "Digital code"
+msgstr ""
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/edit.html.eex:1
+msgid "Edit Currencies"
+msgstr ""
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/index.html.eex:30
+#: lib/threestars_web/templates/currencies/new.html.eex:1
+msgid "New Currency"
+msgstr ""

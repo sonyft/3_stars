@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/threestars_web/templates/layout/app.html.eex:30
+msgid "Rates"
+msgstr "Курсове"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/index.html.eex:1
+#: lib/threestars_web/templates/layout/app.html.eex:31
+msgid "Currencies"
+msgstr "Валути"
+
+#, elixir-format
+#: lib/threestars_web/templates/employees/index.html.eex:1
+#: lib/threestars_web/templates/layout/app.html.eex:33
+msgid "Employees"
+msgstr "Служители"
+
+#, elixir-format
+#: lib/threestars_web/templates/layout/app.html.eex:28
+msgid "Settings"
+msgstr "Настройки"
+
+#, elixir-format
+#: lib/threestars_web/templates/layout/app.html.eex:32
+#: lib/threestars_web/templates/user/index.html.eex:1
+msgid "Users"
+msgstr "Потребители"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/edit.html.eex:5
+#: lib/threestars_web/templates/currencies/new.html.eex:5
+#: lib/threestars_web/templates/employees/edit.html.eex:5
+#: lib/threestars_web/templates/employees/new.html.eex:5
+#: lib/threestars_web/templates/rate/edit.html.eex:5
+#: lib/threestars_web/templates/rate/new.html.eex:5
+#: lib/threestars_web/templates/user/edit.html.eex:5
+#: lib/threestars_web/templates/user/new.html.eex:5
+msgid "Back"
+msgstr "Обратно"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/index.html.eex:23
+#: lib/threestars_web/templates/employees/index.html.eex:28
+#: lib/threestars_web/templates/rate/index.html.eex:25
+#: lib/threestars_web/templates/user/index.html.eex:18
+msgid "Delete"
+msgstr "Изтриване"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/index.html.eex:22
+#: lib/threestars_web/templates/employees/index.html.eex:27
+#: lib/threestars_web/templates/rate/index.html.eex:24
+#: lib/threestars_web/templates/user/index.html.eex:17
+msgid "Edit"
+msgstr "Редактиране"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/form.html.eex:27
+#: lib/threestars_web/templates/employees/form.html.eex:33
+#: lib/threestars_web/templates/rate/form.html.eex:29
+#: lib/threestars_web/templates/user/form.html.eex:21
+msgid "Submit"
+msgstr "Добави"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/form.html.eex:21
+#: lib/threestars_web/templates/currencies/index.html.eex:8
+#: lib/threestars_web/templates/employees/form.html.eex:9
+#: lib/threestars_web/templates/employees/index.html.eex:6
+#: lib/threestars_web/templates/rate/index.html.eex:6
+#: lib/threestars_web/templates/user/form.html.eex:9
+#: lib/threestars_web/templates/user/index.html.eex:6
+msgid "Name"
+msgstr "Име"

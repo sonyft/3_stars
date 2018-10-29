@@ -25,12 +25,12 @@
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Settings</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><%= dgettext("layout", "Settings") %></a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><%= link "Rates", to: rate_path(@conn, :index), class: "sidebar-link" %></li>
-                            <li><%= link "Currencies", to: currencies_path(@conn, :index), class: "sidebar-link" %></li>
-                            <li><%= link "Users", to: user_path(@conn, :index), class: "sidebar-link" %></li>
-                            <li><%= link "Employees", to: employees_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link dgettext("layout", "Rates"), to: rate_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link dgettext("layout", "Currencies"), to: currencies_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link dgettext("layout", "Users"), to: user_path(@conn, :index), class: "sidebar-link" %></li>
+                            <li><%= link dgettext("layout", "Employees"), to: employees_path(@conn, :index), class: "sidebar-link" %></li>
                         </ul>
                     </li>
                     <li>

@@ -1,5 +1,5 @@
-<h2>New Currencies</h2>
+<h2><%= dgettext("currencies", "New Currency") %></h2>
 
 <%= render "form.html", Map.put(assigns, :action, currencies_path(@conn, :create)) %>
 
-<span><%= link "Back", to: currencies_path(@conn, :index) %></span>
+<span><%= link dgettext("layout", "Back"), to: currencies_path(@conn, :index) %></span>

@@ -17,6 +17,9 @@ config :threestars, ThreestarsWeb.Endpoint,
   pubsub: [name: Threestars.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :threestars, ThreestarsWeb.Gettext,
+default_locale: "bg"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

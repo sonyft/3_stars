@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/form.html.eex:15
+#: lib/threestars_web/templates/currencies/index.html.eex:7
+msgid "Character Code"
+msgstr "Символен код"
+
+#, elixir-format
+#: lib/threestars_web/templates/rate/index.html.eex:7
+msgid "Character code"
+msgstr "Символен код"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/form.html.eex:9
+#: lib/threestars_web/templates/currencies/index.html.eex:6
+msgid "Digital Code"
+msgstr "Цифров код"
+
+#, elixir-format
+#: lib/threestars_web/templates/rate/index.html.eex:8
+msgid "Digital code"
+msgstr "Цифров код"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/edit.html.eex:1
+msgid "Edit Currencies"
+msgstr "Редактиране на валута"
+
+#, elixir-format
+#: lib/threestars_web/templates/currencies/index.html.eex:30
+#: lib/threestars_web/templates/currencies/new.html.eex:1
+msgid "New Currency"
+msgstr "Нова Валута"

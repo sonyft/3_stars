@@ -6,24 +6,24 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :code_digit, class: "control-label" %>
+    <%= label f, dgettext("currencies", "Digital Code"), class: "control-label" %>
     <%= number_input f, :code_digit, class: "form-control" %>
     <%= error_tag f, :code_digit %>
   </div>
 
   <div class="form-group">
-    <%= label f, :code_symb, class: "control-label" %>
+    <%= label f, dgettext("currencies", "Character Code"), class: "control-label" %>
     <%= text_input f, :code_symb, class: "form-control" %>
     <%= error_tag f, :code_symb %>
   </div>
 
   <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
+    <%= label f, dgettext("layout", "Name"), class: "control-label" %>
     <%= text_input f, :name, class: "form-control" %>
     <%= error_tag f, :name %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit dgettext("layout", "Submit"), class: "btn btn-primary" %>
   </div>
 <% end %>

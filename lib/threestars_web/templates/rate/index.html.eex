@@ -1,13 +1,13 @@
-<h2>Listing Rate</h2>
+<h2><%= dgettext("rate", "Rates") %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Character code</th>
-      <th>Digital code</th>
-      <th>Date</th>
-      <th>Rate</th>
+      <th><%= dgettext("layout", "Name") %></th>
+      <th><%= dgettext("currencies", "Character code") %></th>
+      <th><%= dgettext("currencies", "Digital code") %></th>
+      <th><%= dgettext("rate", "Date") %></th>
+      <th><%= dgettext("rate", "Rate") %></th>
     </tr>
   </thead>
   <tbody>
@@ -21,13 +21,12 @@
 
 
       <td class="text-right">
-        <span><%= link "Show", to: rate_path(@conn, :show, rate), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: rate_path(@conn, :edit, rate), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: rate_path(@conn, :delete, rate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link dgettext("layout", "Edit"), to: rate_path(@conn, :edit, rate), class: "btn btn-default btn-xs" %></span>
+        <span><%= link dgettext("layout", "Delete"), to: rate_path(@conn, :delete, rate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Rate", to: rate_path(@conn, :new), class: "btn btn-primary" %></span>
+<span><%= link dgettext("rate", "New Rate"), to: rate_path(@conn, :new), class: "btn btn-primary" %></span>

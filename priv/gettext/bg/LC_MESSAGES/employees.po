@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/threestars_web/templates/employees/edit.html.eex:1
+msgid "Edit Employee"
+msgstr "Редактиране на Служителя"
+
+#, elixir-format
+#: lib/threestars_web/templates/employees/index.html.eex:35
+#: lib/threestars_web/templates/employees/new.html.eex:1
+msgid "New Employee"
+msgstr "Нов служител"
+
+#, elixir-format
+#: lib/threestars_web/templates/employees/form.html.eex:21
+#: lib/threestars_web/templates/employees/index.html.eex:8
+msgid "Email"
+msgstr "Електрона поща"
+
+#, elixir-format
+#: lib/threestars_web/templates/employees/form.html.eex:27
+#: lib/threestars_web/templates/employees/index.html.eex:9
+msgid "Phone"
+msgstr "Телефон"
+
+#, elixir-format
+#: lib/threestars_web/templates/employees/form.html.eex:15
+#: lib/threestars_web/templates/employees/index.html.eex:7
+msgid "Position"
+msgstr "Позиция"

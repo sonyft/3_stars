@@ -6,7 +6,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :user_name, class: "control-label" %>
+    <%= label f, dgettext("layout", "Name"), class: "control-label" %>
     <%= text_input f, :user_name, class: "form-control" %>
     <%= error_tag f, :user_name %>
   </div>
@@ -18,6 +18,6 @@
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit dgettext("layout", "Submit"), class: "btn btn-primary" %>
   </div>
 <% end %>
